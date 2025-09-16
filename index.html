@@ -1,653 +1,670 @@
 <!DOCTYPE html> 
 <html lang="en">
-   <head>
-      <title>NeuralPlane</title>
-      <base href=".">
-      <meta name="pathname" content="home.html">
-      <meta name="description" content="🎨 Homepage - NeuralPlane">
-      <meta property="og:title" content="NeuralPlane">
-      <meta property="og:description" content="🎨 Homepage - NeuralPlane">
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="home.html">
-      <meta property="og:image" content="app:/43c3c249ffbb7bd9aa93888006064b1b62e6/data/hanchiao/🎨 Homepage/neuralplane/assets/teaser.png?1727767820409">
-      <meta property="og:site_name" content="🎨 Homepage">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-      <meta charset="UTF-8">
-      <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="site-lib/rss.xml">
-      <script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
-      <link rel="icon" href="site-lib/media/favicon.png">
-      <link rel="preload" href="site-lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="site-lib/styles/snippets.css">
-      </noscript>
-      <link rel="stylesheet" href="site-lib/styles/obsidian.css">
-      <link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="site-lib/styles/other-plugins.css">
-      </noscript>
-      <link rel="stylesheet" href="site-lib/styles/theme.css">
-      <link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
-      </noscript>
-      <link rel="preload" href="site-lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="site-lib/styles/supported-plugins.css">
-      </noscript>
-      <link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="site-lib/styles/main-styles.css">
-      </noscript>
-      <style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-vertical-spacing:1.3em;--sidebar-margin:12px}:root{background-color:#202124}.sidebar{height:100%;font-size:14px;z-index:10;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));position:relative;overflow:hidden;overflow:clip;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}#left-sidebar{left:0}#right-sidebar{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}.sidebar.floating{position:absolute}.sidebar .leaf-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .leaf-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}#left-sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}#right-sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar #left-sidebar-content,.sidebar #right-sidebar-content{contain:none!important;container-type:normal!important;animation:none!important}.sidebar:has(.leaf-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}#left-sidebar .sidebar-topbar{left:0;flex-direction:row}#right-sidebar .sidebar-topbar{right:0;flex-direction:row-reverse}#left-sidebar .topbar-content{margin-right:calc(2.3em + var(--sidebar-margin));flex-direction:row}#right-sidebar .topbar-content{margin-left:calc(2.3em + var(--sidebar-margin));flex-direction:row-reverse}.topbar-content{overflow:hidden visible;overflow:clip visible;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:2px!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}#left-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}#right-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.feature-title{margin-left:4px;text-transform:uppercase;letter-spacing:.06em;margin-top:.75em;margin-bottom:.75em}.feature-header{display:flex;align-items:center;padding-top:0;font-size:1em;padding-left:0}body.floating-sidebars .sidebar{position:absolute}body{transition:background-color var(--color-fade-speed) ease-in-out}#layout{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}#center-content{flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0!important;transition:opacity .2s ease-in-out;pointer-events:none}#center-content>.obsidian-document{padding-left:2em;padding-right:1em;margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}body #center-content>.obsidian-document>.markdown-preview-sizer{padding-bottom:80vh;width:100%;max-width:var(--line-width);flex-basis:var(--line-width);transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document>div{width:100%!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document:not([data-type=markdown]).embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}#center-content>.obsidian-document:not([data-type=markdown]).embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math:not(.math-inline),table)){overflow-x:auto!important}#center-content>.obsidian-document:not([data-type=markdown]){overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.obsidian-document[data-type=attachment]{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%}.obsidian-document[data-type=attachment]>*{outline:0;border:none;box-shadow:none}.obsidian-document[data-type=attachment] :is(img){max-width:90%;max-height:90%;object-fit:contain}.obsidian-document[data-type=attachment]>:is(audio){width:100%;max-width:min(90%,var(--line-width))}.obsidian-document[data-type=attachment]>:is(embed,iframe,video){width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.canvas-wrapper>:is(.header,.footer){z-index:100;position:absolute;display:flex;justify-content:center;flex-direction:column;width:100%;align-items:center}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style>
-      <script defer="">async function loadIncludes(){let e=document.querySelectorAll("link[itemprop='include']");for(const t of e){let e=t.getAttribute("href");try{let o="";if(e.startsWith("https:")||e.startsWith("http:")||"file:"!=window.location.protocol){const l=await fetch(e);if(!l.ok){console.log("Could not include file: "+e),t?.remove();continue}o=await l.text()}else{const t=document.getElementById(btoa(encodeURI(e)));if(t){const e=JSON.parse(decodeURI(atob(t.getAttribute("value")??"")));o=e?.data??""}}let l=document.createRange().createContextualFragment(o),n=Array.from(l.children);for(let e of n)e?.classList?.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e?.classList?.remove("hide")}),10);t.before(l),t.remove(),console.log("Included text: "+o),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script")));!function e(l){let n=o[l],c=l+1;n?(n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(c),l<o.length&&n.addEventListener("load",(()=>e(c)))):l<o.length?e(c):t()}(0)}</script>
-   </head>
-   <body class="publish css-settings-manager mod-linux is-hidden-frameless obsidian-app show-inline-title show-ribbon show-view-header is-focused">
-      <script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script>
-      <div class="parsed-feature-container" style="display: contents;">
-         <link itemprop="include" href="site-lib/html/custom-head-content-content.html">
-      </div>
-      <div id="layout">
-         <div id="left-content" class="leaf" style="--sidebar-width: var(--sidebar-width-left);">
-            <div id="left-sidebar" class="sidebar">
-               <div class="sidebar-handle"></div>
-               <div class="sidebar-topbar">
-                  <div class="topbar-content"></div>
-                  <div class="clickable-icon sidebar-collapse-icon">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                        <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
-                        <path d="M10 4V20"></path>
-                        <path d="M4 7H7"></path>
-                        <path d="M4 10H7"></path>
-                        <path d="M4 13H7"></path>
-                     </svg>
-                  </div>
-               </div>
-               <div class="sidebar-content-wrapper">
-                  <div id="left-sidebar-content" class="leaf-content"></div>
-               </div>
-               <script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+  <head>
+    <title>NeuralPlane</title>
+    <base href=".">
+    <meta name="pathname" content="home.html">
+    <meta name="description" content="🎨 Homepage - NeuralPlane">
+    <meta property="og:title" content="NeuralPlane">
+    <meta property="og:description" content="🎨 Homepage - NeuralPlane">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="home.html">
+    <meta property="og:image" content="app:/43c3c249ffbb7bd9aa93888006064b1b62e6/data/hanchiao/🎨 Homepage/neuralplane/assets/teaser.png?1727767820409">
+    <meta property="og:site_name" content="🎨 Homepage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+    <meta charset="UTF-8">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="site-lib/rss.xml">
+    <script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script>
+    <link rel="icon" href="site-lib/media/favicon.png">
+    <link rel="preload" href="site-lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="site-lib/styles/snippets.css">
+    </noscript>
+    <link rel="stylesheet" href="site-lib/styles/obsidian.css">
+    <link rel="preload" href="site-lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="site-lib/styles/other-plugins.css">
+    </noscript>
+    <link rel="stylesheet" href="site-lib/styles/theme.css">
+    <link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="site-lib/styles/global-variable-styles.css">
+    </noscript>
+    <link rel="preload" href="site-lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="site-lib/styles/supported-plugins.css">
+    </noscript>
+    <link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="site-lib/styles/main-styles.css">
+    </noscript>
+    <style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-vertical-spacing:1.3em;--sidebar-margin:12px}:root{background-color:#202124}.sidebar{height:100%;font-size:14px;z-index:10;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));position:relative;overflow:hidden;overflow:clip;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}#left-sidebar{left:0}#right-sidebar{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}.sidebar.floating{position:absolute}.sidebar .leaf-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .leaf-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}#left-sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}#right-sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar #left-sidebar-content,.sidebar #right-sidebar-content{contain:none!important;container-type:normal!important;animation:none!important}.sidebar:has(.leaf-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}#left-sidebar .sidebar-topbar{left:0;flex-direction:row}#right-sidebar .sidebar-topbar{right:0;flex-direction:row-reverse}#left-sidebar .topbar-content{margin-right:calc(2.3em + var(--sidebar-margin));flex-direction:row}#right-sidebar .topbar-content{margin-left:calc(2.3em + var(--sidebar-margin));flex-direction:row-reverse}.topbar-content{overflow:hidden visible;overflow:clip visible;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:2px!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}#left-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}#right-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.feature-title{margin-left:4px;text-transform:uppercase;letter-spacing:.06em;margin-top:.75em;margin-bottom:.75em}.feature-header{display:flex;align-items:center;padding-top:0;font-size:1em;padding-left:0}body.floating-sidebars .sidebar{position:absolute}body{transition:background-color var(--color-fade-speed) ease-in-out}#layout{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}#center-content{flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0!important;transition:opacity .2s ease-in-out;pointer-events:none}#center-content>.obsidian-document{padding-left:2em;padding-right:1em;margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}body #center-content>.obsidian-document>.markdown-preview-sizer{padding-bottom:80vh;width:100%;max-width:var(--line-width);flex-basis:var(--line-width);transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document>div{width:100%!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document:not([data-type=markdown]).embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}#center-content>.obsidian-document:not([data-type=markdown]).embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math:not(.math-inline),table)){overflow-x:auto!important}#center-content>.obsidian-document:not([data-type=markdown]){overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.obsidian-document[data-type=attachment]{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%}.obsidian-document[data-type=attachment]>*{outline:0;border:none;box-shadow:none}.obsidian-document[data-type=attachment] :is(img){max-width:90%;max-height:90%;object-fit:contain}.obsidian-document[data-type=attachment]>:is(audio){width:100%;max-width:min(90%,var(--line-width))}.obsidian-document[data-type=attachment]>:is(embed,iframe,video){width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.canvas-wrapper>:is(.header,.footer){z-index:100;position:absolute;display:flex;justify-content:center;flex-direction:column;width:100%;align-items:center}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style>
+    <script defer="">async function loadIncludes(){let e=document.querySelectorAll("link[itemprop='include']");for(const t of e){let e=t.getAttribute("href");try{let o="";if(e.startsWith("https:")||e.startsWith("http:")||"file:"!=window.location.protocol){const l=await fetch(e);if(!l.ok){console.log("Could not include file: "+e),t?.remove();continue}o=await l.text()}else{const t=document.getElementById(btoa(encodeURI(e)));if(t){const e=JSON.parse(decodeURI(atob(t.getAttribute("value")??"")));o=e?.data??""}}let l=document.createRange().createContextualFragment(o),n=Array.from(l.children);for(let e of n)e?.classList?.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e?.classList?.remove("hide")}),10);t.before(l),t.remove(),console.log("Included text: "+o),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script")));!function e(l){let n=o[l],c=l+1;n?(n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(c),l<o.length&&n.addEventListener("load",(()=>e(c)))):l<o.length?e(c):t()}(0)}</script>
+  </head>
+  <body class="publish css-settings-manager mod-linux is-hidden-frameless obsidian-app show-inline-title show-ribbon show-view-header is-focused">
+    <script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script>
+    <div class="parsed-feature-container" style="display: contents;">
+      <link itemprop="include" href="site-lib/html/custom-head-content-content.html">
+    </div>
+    <div id="layout">
+      <div id="left-content" class="leaf" style="--sidebar-width: var(--sidebar-width-left);">
+        <div id="left-sidebar" class="sidebar">
+          <div class="sidebar-handle"></div>
+          <div class="sidebar-topbar">
+            <div class="topbar-content"></div>
+            <div class="clickable-icon sidebar-collapse-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                <path d="M10 4V20"></path>
+                <path d="M4 7H7"></path>
+                <path d="M4 10H7"></path>
+                <path d="M4 13H7"></path>
+              </svg>
             </div>
-         </div>
-         <div id="center-content" class="leaf">
-            <div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
-               <style id="MJX-CHTML-styles"></style>
-               <pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> CoIclr</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
-               <div class="markdown-preview-sizer">
-                  <div class="header">
-                     <h1 class="page-title heading inline-title" id="NeuralPlane_0">
-                        <div id="webpage-icon">
-                           <span class="cm-iconize-icon" aria-label="CoIclr" data-icon="CoIclr" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
-                              <svg width="18px" height="18px" viewBox="0 0 1107.5262 923.35059" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" fill="currentColor">
-                                 <defs id="defs1">
-                                    <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-88.318818,-97.505185,-97.505185,88.318818,128.13557,205.02063)">
-                                       <stop offset="0" style="stop-color:rgb(88,201,237);stop-opacity:1" id="stop1"></stop>
-                                       <stop offset="0.15" style="stop-color:rgb(88,201,237);stop-opacity:1" id="stop2"></stop>
-                                       <stop offset="0.47" style="stop-color:rgb(96,195,50);stop-opacity:1" id="stop3"></stop>
-                                       <stop offset="0.83" style="stop-color:rgb(202,227,28);stop-opacity:1" id="stop4"></stop>
-                                       <stop offset="1" style="stop-color:rgb(202,227,28);stop-opacity:1" id="stop5"></stop>
-                                    </linearGradient>
-                                    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
-                                       <rect style="fill:none;fill-rule:evenodd;stroke:#04258d;stroke-width:0.503012" id="rect3" width="168.0553" height="168.0553" x="20.822651" y="62.001827"></rect>
-                                    </clipPath>
-                                 </defs>
-                                 <g id="layer1" clip-path="url(#clipPath2)" transform="matrix(6.6524046,0,0,6.6524046,-146.03751,-526.05384)">
-                                    <path id="path61" d="m 55.215674,150.85082 11.527455,0.005 v -9.82485 l 12.204521,-12.207 H 94.856104 V 111.21043 H 77.245037 l -0.0025,15.90838 -12.209517,12.20702 h -9.817377 z m -5.080439,-36.85003 v -4.60749 l -4.609987,0.002 v 3.53717 l -3.935413,3.93788 -7.343121,0.002 -0.0025,8.40602 h 8.410983 l 0.005,-7.34063 3.932922,-3.93789 z m 72.027305,46.4658 5.55088,-5.55342 h 4.98838 v -6.4918 h -6.49187 v 4.98831 l -5.55336,5.55095 -10.35009,0.005 v 11.84857 l 11.85606,-0.002 z m 16.2743,25.73577 v -11.85105 h -11.8485 l -0.005,10.35003 -5.55088,5.55088 h -4.98838 v 6.49434 h 6.49928 v -4.99085 l 5.54594,-5.55088 z M 30.450692,148.8395 l -4.47557,4.47061 h -4.022533 v 5.23979 l 5.237258,-0.003 v -4.02248 l 4.478062,-4.47562 h 8.338793 v -9.55848 h -9.553519 z m 36.528912,31.53813 -6.287706,6.29021 H 48.967799 v 13.42665 h 13.42422 l 0.005,-11.72157 6.292709,-6.29522 h 5.645434 l 0.0025,-7.35305 h -7.35808 z m 21.723175,6.07112 -6.290211,6.28774 h -5.645433 l -0.005,7.358 h 7.358066 v -5.65291 l 6.287671,-6.29021 H 102.13197 V 174.72465 H 88.707789 Z m 30.388071,-49.07193 -14.12364,0.005 v 12.41362 l -6.399721,6.40219 h -9.819904 v 11.52746 h 11.524985 v -9.82231 l 6.39972,-6.39972 h 12.41856 z m -22.898058,12.4858 v -12.39125 l 7.594508,-7.59451 h 13.37691 v -15.08699 l -15.07952,0.002 v 13.37697 l -7.59952,7.59945 H 82.09399 v 12.38377 l -7.325679,7.33563 h -7.208725 l -0.005,8.91631 h 8.91632 v -7.2137 l 7.330618,-7.32815 z M 66.255249,85.136116 h -3.111491 v 3.113953 h 3.111491 z m -5.528502,10.840412 h -7.716496 v 7.714042 l 7.716496,-0.003 z m -9.794975,-7.813601 h -5.722654 v 5.722697 h 5.722654 z M 134.02106,197.54805 h 5.25714 v -5.25961 h -5.25714 z M 50.1427,155.54792 h -5.254687 v 5.25468 H 50.1427 Z m 13.292295,-27.14216 h -5.252203 v 5.2522 h 5.252203 z M 77.501452,92.601221 H 66.693349 v 10.813039 h 10.808103 z m 28.058178,5.020696 H 95.092551 V 108.08646 H 105.55963 Z M 70.183182,109.45306 H 56.333323 v 13.85234 l 13.849859,-0.002 z m 69.052758,27.46075 -6.95983,0.005 v 6.95474 l 6.95983,-0.002 z m -12.13484,-13.59846 -5.59322,0.002 -0.002,5.59322 h 5.59569 z M 90.031988,97.918127 H 83.20912 V 104.741 l 6.822868,-0.002 z M 49.607524,131.11399 h -5.779907 v 5.77745 h 5.779907 z m 67.394886,46.97355 h -5.77491 l -0.005,5.78239 h 5.78493 z" style="clip-rule:evenodd;fill:url(#_Linear1);fill-rule:nonzero;stroke-width:1.2;stroke-linejoin:round;stroke-miterlimit:2"></path>
-                                    <path d="m 165.55664,187.95972 h -7.38043 v -7.38297 h 7.38043 z m -11.15158,-33.55931 h -3.99764 v -3.99765 l 3.99764,-0.002 z m -14.54439,-37.40512 h -7.07427 v -7.0718 h 7.07427 z m -19.1269,-19.331108 h -4.11471 v -4.109625 h 4.11471 z m 64.29087,75.001948 c -9.3619,-8.96359 -2.42945,-9.01093 -2.24529,-14.53197 0.1891,-5.5185 -4.43321,-6.54903 -4.43321,-6.54903 1.99882,-4.6971 2.24768,-5.78239 2.24768,-5.78239 -4.24404,-3.24343 -4.99331,-7.24354 -4.99331,-7.24354 4.24164,-6.48933 7.22865,-13.94449 7.22865,-13.94449 0,0 -28.03581,-8.98102 -38.61733,-15.76656 -3.99271,-1.65781 -2.9945,-7.82849 -2.9945,-7.82849 C 113.75157,65.812487 72.605154,83.540543 72.605154,83.540543 v 1.000611 c 0,0 3.126442,0.373262 8.092383,1.764846 l 6.890112,0.005 v 2.255168 c 2.524002,0.948396 5.259683,2.103393 8.12717,3.512264 h 16.229571 l -0.005,10.292868 c 1.76238,1.40887 3.51728,2.92725 5.24974,4.56269 h 8.96358 l 0.002,9.91445 c 2.21291,2.87003 4.3362,5.99146 6.3226,9.39422 1.22965,1.9241 2.36722,3.8458 3.43754,5.77491 h 8.05005 v 11.30837 l 6.44206,0.005 v 7.06933 l -3.22601,0.0423 c 0,0 0.0353,7.55217 0.0353,11.19639 l -8.57275,0.002 v 8.7047 h 8.70717 v -8.47821 h 8.71719 v 16.46108 h -6.49187 c 1.60058,23.01011 -4.11209,39.54824 -4.11209,39.54824 3.4973,-9.74017 12.73466,-17.85492 25.39221,-22.39525 11.91828,-4.26895 23.53288,-13.85487 14.16604,-22.81839" style="clip-rule:evenodd;fill:#a3a0a0;fill-rule:nonzero;stroke-width:1.7;stroke-linejoin:round;stroke-miterlimit:2" id="path1"></path>
-                                 </g>
+          </div>
+          <div class="sidebar-content-wrapper">
+            <div id="left-sidebar-content" class="leaf-content"></div>
+          </div>
+          <script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script>
+        </div>
+      </div>
+      <div id="center-content" class="leaf">
+        <div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown">
+          <style id="MJX-CHTML-styles"></style>
+          <pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> CoIclr</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+          <div class="markdown-preview-sizer">
+            <div class="header">
+              <h1 class="page-title heading inline-title" id="NeuralPlane_0">
+                <div id="webpage-icon">
+                  <span class="cm-iconize-icon" aria-label="CoIclr" data-icon="CoIclr" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
+                    <svg width="18px" height="18px" viewBox="0 0 1107.5262 923.35059" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" fill="currentColor">
+                      <defs id="defs1">
+                        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-88.318818,-97.505185,-97.505185,88.318818,128.13557,205.02063)">
+                          <stop offset="0" style="stop-color:rgb(88,201,237);stop-opacity:1" id="stop1"></stop>
+                          <stop offset="0.15" style="stop-color:rgb(88,201,237);stop-opacity:1" id="stop2"></stop>
+                          <stop offset="0.47" style="stop-color:rgb(96,195,50);stop-opacity:1" id="stop3"></stop>
+                          <stop offset="0.83" style="stop-color:rgb(202,227,28);stop-opacity:1" id="stop4"></stop>
+                          <stop offset="1" style="stop-color:rgb(202,227,28);stop-opacity:1" id="stop5"></stop>
+                        </linearGradient>
+                        <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
+                          <rect style="fill:none;fill-rule:evenodd;stroke:#04258d;stroke-width:0.503012" id="rect3" width="168.0553" height="168.0553" x="20.822651" y="62.001827"></rect>
+                        </clipPath>
+                      </defs>
+                      <g id="layer1" clip-path="url(#clipPath2)" transform="matrix(6.6524046,0,0,6.6524046,-146.03751,-526.05384)">
+                        <path id="path61" d="m 55.215674,150.85082 11.527455,0.005 v -9.82485 l 12.204521,-12.207 H 94.856104 V 111.21043 H 77.245037 l -0.0025,15.90838 -12.209517,12.20702 h -9.817377 z m -5.080439,-36.85003 v -4.60749 l -4.609987,0.002 v 3.53717 l -3.935413,3.93788 -7.343121,0.002 -0.0025,8.40602 h 8.410983 l 0.005,-7.34063 3.932922,-3.93789 z m 72.027305,46.4658 5.55088,-5.55342 h 4.98838 v -6.4918 h -6.49187 v 4.98831 l -5.55336,5.55095 -10.35009,0.005 v 11.84857 l 11.85606,-0.002 z m 16.2743,25.73577 v -11.85105 h -11.8485 l -0.005,10.35003 -5.55088,5.55088 h -4.98838 v 6.49434 h 6.49928 v -4.99085 l 5.54594,-5.55088 z M 30.450692,148.8395 l -4.47557,4.47061 h -4.022533 v 5.23979 l 5.237258,-0.003 v -4.02248 l 4.478062,-4.47562 h 8.338793 v -9.55848 h -9.553519 z m 36.528912,31.53813 -6.287706,6.29021 H 48.967799 v 13.42665 h 13.42422 l 0.005,-11.72157 6.292709,-6.29522 h 5.645434 l 0.0025,-7.35305 h -7.35808 z m 21.723175,6.07112 -6.290211,6.28774 h -5.645433 l -0.005,7.358 h 7.358066 v -5.65291 l 6.287671,-6.29021 H 102.13197 V 174.72465 H 88.707789 Z m 30.388071,-49.07193 -14.12364,0.005 v 12.41362 l -6.399721,6.40219 h -9.819904 v 11.52746 h 11.524985 v -9.82231 l 6.39972,-6.39972 h 12.41856 z m -22.898058,12.4858 v -12.39125 l 7.594508,-7.59451 h 13.37691 v -15.08699 l -15.07952,0.002 v 13.37697 l -7.59952,7.59945 H 82.09399 v 12.38377 l -7.325679,7.33563 h -7.208725 l -0.005,8.91631 h 8.91632 v -7.2137 l 7.330618,-7.32815 z M 66.255249,85.136116 h -3.111491 v 3.113953 h 3.111491 z m -5.528502,10.840412 h -7.716496 v 7.714042 l 7.716496,-0.003 z m -9.794975,-7.813601 h -5.722654 v 5.722697 h 5.722654 z M 134.02106,197.54805 h 5.25714 v -5.25961 h -5.25714 z M 50.1427,155.54792 h -5.254687 v 5.25468 H 50.1427 Z m 13.292295,-27.14216 h -5.252203 v 5.2522 h 5.252203 z M 77.501452,92.601221 H 66.693349 v 10.813039 h 10.808103 z m 28.058178,5.020696 H 95.092551 V 108.08646 H 105.55963 Z M 70.183182,109.45306 H 56.333323 v 13.85234 l 13.849859,-0.002 z m 69.052758,27.46075 -6.95983,0.005 v 6.95474 l 6.95983,-0.002 z m -12.13484,-13.59846 -5.59322,0.002 -0.002,5.59322 h 5.59569 z M 90.031988,97.918127 H 83.20912 V 104.741 l 6.822868,-0.002 z M 49.607524,131.11399 h -5.779907 v 5.77745 h 5.779907 z m 67.394886,46.97355 h -5.77491 l -0.005,5.78239 h 5.78493 z" style="clip-rule:evenodd;fill:url(#_Linear1);fill-rule:nonzero;stroke-width:1.2;stroke-linejoin:round;stroke-miterlimit:2"></path>
+                        <path d="m 165.55664,187.95972 h -7.38043 v -7.38297 h 7.38043 z m -11.15158,-33.55931 h -3.99764 v -3.99765 l 3.99764,-0.002 z m -14.54439,-37.40512 h -7.07427 v -7.0718 h 7.07427 z m -19.1269,-19.331108 h -4.11471 v -4.109625 h 4.11471 z m 64.29087,75.001948 c -9.3619,-8.96359 -2.42945,-9.01093 -2.24529,-14.53197 0.1891,-5.5185 -4.43321,-6.54903 -4.43321,-6.54903 1.99882,-4.6971 2.24768,-5.78239 2.24768,-5.78239 -4.24404,-3.24343 -4.99331,-7.24354 -4.99331,-7.24354 4.24164,-6.48933 7.22865,-13.94449 7.22865,-13.94449 0,0 -28.03581,-8.98102 -38.61733,-15.76656 -3.99271,-1.65781 -2.9945,-7.82849 -2.9945,-7.82849 C 113.75157,65.812487 72.605154,83.540543 72.605154,83.540543 v 1.000611 c 0,0 3.126442,0.373262 8.092383,1.764846 l 6.890112,0.005 v 2.255168 c 2.524002,0.948396 5.259683,2.103393 8.12717,3.512264 h 16.229571 l -0.005,10.292868 c 1.76238,1.40887 3.51728,2.92725 5.24974,4.56269 h 8.96358 l 0.002,9.91445 c 2.21291,2.87003 4.3362,5.99146 6.3226,9.39422 1.22965,1.9241 2.36722,3.8458 3.43754,5.77491 h 8.05005 v 11.30837 l 6.44206,0.005 v 7.06933 l -3.22601,0.0423 c 0,0 0.0353,7.55217 0.0353,11.19639 l -8.57275,0.002 v 8.7047 h 8.70717 v -8.47821 h 8.71719 v 16.46108 h -6.49187 c 1.60058,23.01011 -4.11209,39.54824 -4.11209,39.54824 3.4973,-9.74017 12.73466,-17.85492 25.39221,-22.39525 11.91828,-4.26895 23.53288,-13.85487 14.16604,-22.81839" style="clip-rule:evenodd;fill:#a3a0a0;fill-rule:nonzero;stroke-width:1.7;stroke-linejoin:round;stroke-miterlimit:2" id="path1"></path>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                NeuralPlane
+              </h1>
+              <div class="data-bar"></div>
+            </div>
+            <div class="markdown-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+            <div class="el-center">
+              <center>
+                <h1 dir="auto" class="heading" id="Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0">Structured 3D Reconstruction in Planar Primitives with Neural Fields</h1>
+              </center>
+              <center>
+                <a href="https://timber-ye.github.io/home.html" target="_self" rel="noopener nofollow" class="is-unresolved">Hanqiao Ye<sup>1,2</sup></a>, 
+                <a href="https://paulliuyz.github.io/" target="_self" rel="noopener nofollow" class="is-unresolved">Yuzhou Liu<sup>1,2</sup></a>, 
+                <a href="http://3dv.ac.cn/en/faculty/ydl/" target="_self" rel="noopener nofollow" class="is-unresolved">Yangdong Liu<sup>2</sup></a>, 
+                <a href="http://3dv.ac.cn/en/faculty/shs/" target="_self" rel="noopener nofollow" class="is-unresolved">Shuhan Shen<sup>1,2</sup></a>
+                <br>
+                <a href="https://www.ucas.ac.cn/" target="_self" rel="noopener nofollow" class="is-unresolved"><sup>1 </sup> School of Artificial Intelligence, University of Chinese Academy of Sciences</a>, <a href="http://english.ia.cas.cn/" target="_self" rel="noopener nofollow" class="is-unresolved"><sup>2 </sup> Institute of Automation, Chinese Academy of Sciences</a>
+              </center>
+            </div>
+            <div class="el-pre">
+              <div class="block-language-col">
+                <div class="columnParent">
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;">
+                          <span style="font-size: 26px; margin-top: 0px;">
+                            <span class="cm-iconize-icon" aria-label="FarFilePdf" data-icon="FarFilePdf" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="26px" height="26px">
+                                <!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
+                                <path d="M64 464l48 0 0 48-48 0c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 304l-48 0 0-144-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z"></path>
                               </svg>
-                           </span>
-                        </div>
-                        NeuralPlane
-                     </h1>
-                     <div class="data-bar"></div>
-                  </div>
-                  <div class="markdown-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
-                  <div class="el-center">
-                     <center>
-                        <h1 dir="auto" class="heading" id="Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0">Planar Instance 3D Reconstruction Leveraging Planar Strutural Priors</h1>
-                     </center>
-                  </div>
-                  <div class="el-pre">
-                     <div class="block-language-col">
-                        <div class="columnParent">
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;">
-                                       <span style="font-size: 26px; margin-top: 0px;">
-                                          <span class="cm-iconize-icon" aria-label="FarFilePdf" data-icon="FarFilePdf" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
-                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="26px" height="26px">
-                                                <!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
-                                                <path d="M64 464l48 0 0 48-48 0c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 304l-48 0 0-144-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z"></path>
-                                             </svg>
-                                          </span>
-                                       </span>
-                                       <a data-tooltip-position="top" aria-label="https://openreview.net/pdf?id=5UKrnKuspb" rel="noopener nofollow" class="external-link is-unresolved" href="https://openreview.net/pdf?id=5UKrnKuspb" target="_self"><code>Paper</code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                       <span style="font-size: 26px">
-                                          <span class="cm-iconize-icon" aria-label="LiPaperclip" data-icon="LiPaperclip" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-paperclip">
-                                                <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                                             </svg>
-                                          </span>
-                                       </span>
-                                       <a data-tooltip-position="top" aria-label="https://openreview.net/attachment?id=5UKrnKuspb&amp;name=supplementary_material" rel="noopener nofollow" class="external-link is-unresolved" href="https://openreview.net/attachment?id=5UKrnKuspb&amp;name=supplementary_material" target="_self"><code>Supplementary</code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                       <span style="font-size: 26px">
-                                          <span class="cm-iconize-icon" aria-label="LiGithub" data-icon="LiGithub" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-github">
-                                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                                             </svg>
-                                          </span>
-                                       </span>
-                                       <a data-tooltip-position="top" aria-label="https://github.com/3dv-casia/NeuralPlane" rel="noopener nofollow" class="external-link is-unresolved" href="https://github.com/3dv-casia/NeuralPlane" target="_self" style="margin-bottom: 0px;"><code style="margin-bottom: 0px;">Code (Available!)</code></a>
-                                    </p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-center">
-                     <center>
-                        <script src="neuralplane/static/js/video_comparison.js"></script>
-                        <video style="width: auto; height: 200px; margin-bottom: -27px; margin-top: 25px" src="neuralplane/assets/teaser-video.mp4" muted="" autoplay="" playsinline="" loop="" id="xyalias6" class="video" onplay="resizeAndPlay(this)"></video>
-                        <canvas id="xyalias6Merge" class="videoMerge" height="0"></canvas>
-                        <p dir="auto">
-                           <b>NeuralPlane</b> rebuilds indoor scenes as arrangements of planar primitives.
+                            </span>
+                          </span>
+                          <a data-tooltip-position="top" aria-label="https://openreview.net/pdf?id=5UKrnKuspb" rel="noopener nofollow" class="external-link is-unresolved" href="https://openreview.net/pdf?id=5UKrnKuspb" target="_self"><code>Paper</code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <span style="font-size: 26px">
+                            <span class="cm-iconize-icon" aria-label="LiPaperclip" data-icon="LiPaperclip" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-paperclip">
+                                <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                              </svg>
+                            </span>
+                          </span>
+                          <a data-tooltip-position="top" aria-label="https://openreview.net/attachment?id=5UKrnKuspb&amp;name=supplementary_material" rel="noopener nofollow" class="external-link is-unresolved" href="https://openreview.net/attachment?id=5UKrnKuspb&amp;name=supplementary_material" target="_self"><code>Supplementary</code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <span style="font-size: 26px">
+                            <span class="cm-iconize-icon" aria-label="LiGithub" data-icon="LiGithub" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-github">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                              </svg>
+                            </span>
+                          </span>
+                          <a data-tooltip-position="top" aria-label="https://github.com/3dv-casia/NeuralPlane" rel="noopener nofollow" class="external-link is-unresolved" href="https://github.com/3dv-casia/NeuralPlane" target="_self" style="margin-bottom: 0px;"><code style="margin-bottom: 0px;">Code (Available!)</code></a>
                         </p>
-                     </center>
+                      </div>
+                    </div>
                   </div>
-                  <div class="el-hr">
-                     <hr>
-                  </div>
-                  <div class="el-center">
-                     <center>
-                        <h2 dir="auto" class="heading" id="Abstract_0">Abstract</h2>
-                     </center>
-                  </div>
-                  <div class="el-div">
-                     <div style="text-align: center;">
-                        <img style="width: 75%;" alt="Teaser" src="neuralplane/assets/teaser.png" referrerpolicy="no-referrer" target="_self">
-                        <center>
-                           <div style="margin-top: 20px; text-align: justify; width: 100%">
-                              3D maps assembled from planar primitives are compact and expressive in representing man-made environments, making them suitable for a spectrum of applications. In this paper, we present <strong>NeuralPlane</strong>, a novel approach that explores <strong>neural</strong> fields for multi-view 3D <strong>plane</strong> reconstruction. Our method is centered upon the core idea of distilling geometric and semantic cues from inconsistent 2D plane observations into a unified 3D neural representation, which unlocks the full leverage of plane attributes. NeuralPlane realizes this idea via several key designs, including: 1) a monocular module that generates geometrically smooth and semantically meaningful segments as 2D plane observations, 2) a plane-guided training procedure that implicitly learns accurate plane locations from multi-view plane observations, and 3) a self-supervised feature field termed Neural Coplanarity Field that enables the modeling of scene semantics alongside the geometry. Without relying on plane annotations, our method achieves high-fidelity reconstruction comprising planar primitives that are not only crisp but also well-aligned with the semantic content. Comprehensive experiments on ScanNetv2 and ScanNet++ demonstrate the superiority of our results in both geometry and semantics
-                           </div>
-                        </center>
-                     </div>
-                  </div>
-                  <div class="el-hr">
-                     <hr>
-                  </div>
-                  <div class="el-center">
-                     <center>
-                        <h2 dir="auto" class="heading" id="Results_Gallery_0">Results Gallery</h2>
-                     </center>
-                  </div>
-                  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                  <script>
-                     $(function() {
-                         $('#full_label-selector').change(function(){
-                             $('.full_label').hide();
-                             $('.full_label.' + $(this).val()).show();
-                             console.log($(this).val())
-                         });
-                     
-                         $('#full_label-selector2').change(function(){
-                             $('.full_label2').hide();
-                             $('.full_label2.' + $(this).val()).show();
-                             console.log($(this).val())
-                         });
-                     
-                         $('#full_label-selector3').change(function(){
-                             $('.full_label3').hide();
-                             $('.full_label3.' + $(this).val()).show();
-                             console.log($(this).val())
-                         });
-                     
-                         $('#full_label-selector4').change(function(){
-                             $('.full_label4').hide();
-                             $('.full_label4.' + $(this).val()).show();
-                             console.log($(this).val())
-                         });
-                     
-                         $('.partial_label-selector-3D').change(function(){
-                             var dataset = $('#partial_label-selector1_3D').val();
-                             var label = $('#partial_label-selector2_3D').val();
-                     
-                             $('.partial_label_3D').hide();
-                             $('.partial_label_3D.' + dataset + '.' + label).show();
-                             console.log('.partial_label_3D.' + dataset + '.' + label)
-                         });
-                     
-                         $('#live-selector').change(function(){
-                             $('.live').hide();
-                             $('.live.' + $(this).val()).show();
-                         });
-                     
-                         $('#obj3D-selector').change(function(){
-                             $('.obj3D').hide();
-                             $('.obj3D.' + $(this).val()).show();
-                         });
-                     });
-                  </script>
-                  <div class="el-h4">
-                     <h3 data-heading="ScanNetv2" dir="auto" class="heading" id="ScanNetv2_0">
-                        <span class="heading-collapse-indicator collapse-indicator collapse-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                              <path d="M3 8L12 17L21 8"></path>
-                           </svg>
-                        </span>
-                        ScanNetv2
-                     </h3>
-                  </div>
-                  <div class="el-pre">
-                     <div class="block-language-col">
-                        <div class="columnParent">
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;"
-                                       orientation="0deg 0deg 135deg"
-                                       camera-controls
-                                       alt="scene"
-                                       src="neuralplane/assets/scannetv2/gt-scene0084_00.glb"
-                                       exposure="1.5"
-                                       shadow-intensity="1"
-                                       generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: -1px;">
-                                    Choose a result from 
-                                    <select id="full_label-selector" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
-                                       <option value="planarrecon" selected>PlanarRecon</option>
-                                       <option value="objectsdfpp">ObjectSDF++</option>
-                                       <option value="airplane">AirPlanes</option>
-                                    </select>
-                                 </div>
-                                 <div>
-                                    <div class="full_label planarrecon">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/planarrecon-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                    <div class="full_label objectsdfpp", style="display: none;">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/objectsdf++-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                    <div class="full_label airplane", style="display: none;">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/airplanes-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/ours-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-pre">
-                     <div class="block-language-col">
-                        <div class="columnParent">
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/gt-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
-                                       Choose a result from 
-                                       <select id="full_label-selector2" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
-                                          <option value="planarrecon" selected>PlanarRecon</option>
-                                          <option value="objectsdfpp">ObjectSDF++</option>
-                                          <option value="airplane">AirPlanes</option>
-                                       </select>
-                                    </p>
-                                 </div>
-                                 <div>
-                                    <div class="full_label2 planarrecon">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/planarrecon-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                    <div class="full_label2 objectsdfpp", style="display: none;">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/objectsdf++-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                    <div class="full_label2 airplane", style="display: none;">
-                                       <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/airplanes-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                          <effect-composer render-mode="quality" msaa="8">
-                                             <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                          </effect-composer>
-                                       </model-viewer>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/ours-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-h4">
-                     <h3 data-heading="ScanNet++" dir="auto" class="heading" id="ScanNet++_0">
-                        <span class="heading-collapse-indicator collapse-indicator collapse-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                              <path d="M3 8L12 17L21 8"></path>
-                           </svg>
-                        </span>
-                        ScanNet++
-                     </h3>
-                  </div>
-                  <div class="el-pre">
-                     <div class="block-language-col">
-                        <div class="columnParent">
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/GT-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
-                                       Choose a result from 
-                                       <select id="full_label-selector3" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
-                                          <option value="planarrecon" selected>PlanarRecon</option>
-                                          <option value="neuris">NeuRIS</option>
-                                          <option value="airplane">AirPlanes</option>
-                                       </select>
-                                    </p>
-                                 </div>
-                                 <div class="full_label3 planarrecon">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/PlanarRecon-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                                 <div class="full_label3 neuris", style="display: none;">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/NeuRIS-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                                 <div class="full_label3 airplane", style="display: none;">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/AirPlanes-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/Ours-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-pre">
-                     <div class="block-language-col">
-                        <div class="columnParent">
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/GT-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
-                                       Choose a result from 
-                                       <select id="full_label-selector4" class="partial_label-selector4" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
-                                          <option value="planarrecon" selected>PlanarRecon</option>
-                                          <option value="neuris">NeuRIS</option>
-                                          <option value="airplane">AirPlanes</option>
-                                       </select>
-                                    </p>
-                                 </div>
-                                 <div class="full_label4 planarrecon">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/PlanarRecon-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                                 <div class="full_label4 neuris", style="display: none;">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/NeuRIS-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                                 <div class="full_label4 airplane", style="display: none;">
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/AirPlanes-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
-                              <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
-                                 <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
-                                    <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
-                                 </div>
-                                 <div>
-                                    <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/Ours-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
-                                       <effect-composer render-mode="quality" msaa="8">
-                                          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
-                                       </effect-composer>
-                                    </model-viewer>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-hr">
-                     <hr>
-                  </div>
-                  <div class="el-center">
-                     <center>
-                        <h2 dir="auto" class="heading" id="BibTex_0">BibTex Citation</h2>
-                     </center>
-                  </div>
-                  <div class="el-pre">
-                     <pre class="language-bib" tabindex="0"><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
-                  </div>
-                  <div class="footer">
-                     <div class="data-bar"></div>
-                  </div>
-               </div>
+                </div>
+              </div>
             </div>
-         </div>
-         <div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);">
-            <div id="right-sidebar" class="sidebar">
-               <div class="sidebar-handle"></div>
-               <div class="sidebar-topbar">
-                  <div class="topbar-content">
-                     <div id="search-container">
-                        <div id="search-wrapper">
-                           <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
-                           <div aria-label="Clear search" id="search-clear-button"></div>
-                        </div>
-                     </div>
-                     <label class="theme-toggle-container" for="theme-toggle-input" id="">
-                        <input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
-                        <div class="toggle-background"></div>
-                     </label>
-                  </div>
-                  <div class="clickable-icon sidebar-collapse-icon">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                        <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
-                        <path d="M10 4V20"></path>
-                        <path d="M4 7H7"></path>
-                        <path d="M4 10H7"></path>
-                        <path d="M4 13H7"></path>
-                     </svg>
-                  </div>
-               </div>
-               <div class="sidebar-content-wrapper">
-                  <div id="right-sidebar-content" class="leaf-content">
-                     <div id="outline" class=" tree-container">
-                        <div class="feature-header">
-                           <div class="feature-title">Table Of Contents</div>
-                           <button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-                           </button>
-                        </div>
-                        <div class="tree-item" data-depth="1">
-                           <a class="tree-item-self is-clickable" href="home.html#NeuralPlane_0" data-path="#NeuralPlane_0">
-                              <div class="tree-item-inner heading-link" heading-name="NeuralPlane">NeuralPlane</div>
-                           </a>
-                           <div class="tree-item-children"></div>
-                        </div>
-                        <div class="tree-item mod-collapsible" data-depth="1">
-                           <a class="tree-item-self is-clickable mod-collapsible" href="home.html#Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0" data-path="#Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0">
-                              <div class="tree-item-icon collapse-icon">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                                    <path d="M3 8L12 17L21 8"></path>
-                                 </svg>
-                              </div>
-                              <div class="tree-item-inner heading-link" heading-name="Structured 3D Reconstruction in Planar Primitives with Neural Fields">Structured 3D Reconstruction in Planar Primitives with Neural Fields</div>
-                           </a>
-                           <div class="tree-item-children">
-                              <div class="tree-item" data-depth="2">
-                                 <a class="tree-item-self is-clickable" href="home.html#Abstract_0" data-path="#Abstract_0">
-                                    <div class="tree-item-inner heading-link" heading-name="Abstract">Abstract</div>
-                                 </a>
-                                 <div class="tree-item-children"></div>
-                              </div>
-                              <div class="tree-item mod-collapsible" data-depth="2">
-                                 <a class="tree-item-self is-clickable mod-collapsible" href="home.html#Results_Gallery_0" data-path="#Results_Gallery_0">
-                                    <div class="tree-item-icon collapse-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                                          <path d="M3 8L12 17L21 8"></path>
-                                       </svg>
-                                    </div>
-                                    <div class="tree-item-inner heading-link" heading-name="Results Gallery">Results Gallery</div>
-                                 </a>
-                                 <div class="tree-item-children">
-                                    <div class="tree-item" data-depth="4">
-                                       <a class="tree-item-self is-clickable" href="home.html#ScanNetv2_0" data-path="#ScanNetv2_0">
-                                          <div class="tree-item-inner heading-link" heading-name="ScanNetv2">ScanNetv2</div>
-                                       </a>
-                                       <div class="tree-item-children"></div>
-                                    </div>
-                                    <div class="tree-item" data-depth="4">
-                                       <a class="tree-item-self is-clickable" href="home.html#ScanNet++_0" data-path="#ScanNet++_0">
-                                          <div class="tree-item-inner heading-link" heading-name="ScanNet++">ScanNet++</div>
-                                       </a>
-                                       <div class="tree-item-children"></div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="tree-item" data-depth="2">
-                                 <a class="tree-item-self is-clickable" href="home.html#BibTex_0" data-path="#BibTex_0">
-                                    <div class="tree-item-inner heading-link" heading-name="BibTex">BibTex</div>
-                                 </a>
-                                 <div class="tree-item-children"></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+            <div class="el-center">
+              <center>
+                <script src="neuralplane/static/js/video_comparison.js"></script>
+                <video style="width: auto; height: 200px; margin-bottom: -27px; margin-top: 25px" src="neuralplane/assets/teaser-video.mp4" muted="" autoplay="" playsinline="" loop="" id="xyalias6" class="video" onplay="resizeAndPlay(this)"></video>
+                <canvas id="xyalias6Merge" class="videoMerge" height="0"></canvas>
+                <p dir="auto">
+                  <b>NeuralPlane</b> rebuilds indoor scenes as arrangements of planar primitives.
+                </p>
+              </center>
             </div>
-         </div>
+            <div class="el-hr">
+              <hr>
+            </div>
+            <div class="el-center">
+              <center>
+                <h2 dir="auto" class="heading" id="Abstract_0">Abstract</h2>
+              </center>
+            </div>
+            <div class="el-div">
+              <div style="text-align: center;">
+                <img style="width: 75%;" alt="Teaser" src="neuralplane/assets/teaser.png" referrerpolicy="no-referrer" target="_self">
+                <center>
+                  <div style="margin-top: 20px; text-align: justify; width: 100%">
+                    3D maps assembled from planar primitives are compact and expressive in representing man-made environments, making them suitable for a spectrum of applications. In this paper, we present <strong>NeuralPlane</strong>, a novel approach that explores <strong>neural</strong> fields for multi-view 3D <strong>plane</strong> reconstruction. Our method is centered upon the core idea of distilling geometric and semantic cues from inconsistent 2D plane observations into a unified 3D neural representation, which unlocks the full leverage of plane attributes. NeuralPlane realizes this idea via several key designs, including: 1) a monocular module that generates geometrically smooth and semantically meaningful segments as 2D plane observations, 2) a plane-guided training procedure that implicitly learns accurate plane locations from multi-view plane observations, and 3) a self-supervised feature field termed Neural Coplanarity Field that enables the modeling of scene semantics alongside the geometry. Without relying on plane annotations, our method achieves high-fidelity reconstruction comprising planar primitives that are not only crisp but also well-aligned with the semantic content. Comprehensive experiments on ScanNetv2 and ScanNet++ demonstrate the superiority of our results in both geometry and semantics
+                  </div>
+                </center>
+              </div>
+            </div>
+            <div class="el-hr">
+              <hr>
+            </div>
+            <div class="el-center">
+              <center>
+                <h2 dir="auto" class="heading" id="Results_Gallery_0">Results Gallery</h2>
+              </center>
+            </div>
+            <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
+              $(function() {
+                  $('#full_label-selector').change(function(){
+                      $('.full_label').hide();
+                      $('.full_label.' + $(this).val()).show();
+                      console.log($(this).val())
+                  });
+              
+                  $('#full_label-selector2').change(function(){
+                      $('.full_label2').hide();
+                      $('.full_label2.' + $(this).val()).show();
+                      console.log($(this).val())
+                  });
+              
+                  $('#full_label-selector3').change(function(){
+                      $('.full_label3').hide();
+                      $('.full_label3.' + $(this).val()).show();
+                      console.log($(this).val())
+                  });
+              
+                  $('#full_label-selector4').change(function(){
+                      $('.full_label4').hide();
+                      $('.full_label4.' + $(this).val()).show();
+                      console.log($(this).val())
+                  });
+              
+                  $('.partial_label-selector-3D').change(function(){
+                      var dataset = $('#partial_label-selector1_3D').val();
+                      var label = $('#partial_label-selector2_3D').val();
+              
+                      $('.partial_label_3D').hide();
+                      $('.partial_label_3D.' + dataset + '.' + label).show();
+                      console.log('.partial_label_3D.' + dataset + '.' + label)
+                  });
+              
+                  $('#live-selector').change(function(){
+                      $('.live').hide();
+                      $('.live.' + $(this).val()).show();
+                  });
+              
+                  $('#obj3D-selector').change(function(){
+                      $('.obj3D').hide();
+                      $('.obj3D.' + $(this).val()).show();
+                  });
+              });
+            </script>
+            <div class="el-h4">
+              <h3 data-heading="ScanNetv2" dir="auto" class="heading" id="ScanNetv2_0">
+                <span class="heading-collapse-indicator collapse-indicator collapse-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg>
+                </span>
+                ScanNetv2
+              </h3>
+            </div>
+            <div class="el-pre">
+              <div class="block-language-col">
+                <div class="columnParent">
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;"
+                          orientation="0deg 0deg 135deg"
+                          camera-controls
+                          alt="scene"
+                          src="neuralplane/assets/scannetv2/gt-scene0084_00.glb"
+                          exposure="1.5"
+                          shadow-intensity="1"
+                          generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: -1px;">
+                        Choose a result from 
+                        <select id="full_label-selector" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+                          <option value="planarrecon" selected>PlanarRecon</option>
+                          <option value="objectsdfpp">ObjectSDF++</option>
+                          <option value="airplane">AirPlanes</option>
+                        </select>
+                      </div>
+                      <div>
+                        <div class="full_label planarrecon">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/planarrecon-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                        <div class="full_label objectsdfpp", style="display: none;">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/objectsdf++-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                        <div class="full_label airplane", style="display: none;">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/airplanes-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/ours-scene0084_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-pre">
+              <div class="block-language-col">
+                <div class="columnParent">
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/gt-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
+                          Choose a result from 
+                          <select id="full_label-selector2" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+                            <option value="planarrecon" selected>PlanarRecon</option>
+                            <option value="objectsdfpp">ObjectSDF++</option>
+                            <option value="airplane">AirPlanes</option>
+                          </select>
+                        </p>
+                      </div>
+                      <div>
+                        <div class="full_label2 planarrecon">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/planarrecon-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                        <div class="full_label2 objectsdfpp", style="display: none;">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/objectsdf++-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                        <div class="full_label2 airplane", style="display: none;">
+                          <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/airplanes-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                            <effect-composer render-mode="quality" msaa="8">
+                              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                            </effect-composer>
+                          </model-viewer>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannetv2/ours-scene0427_00.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-h4">
+              <h3 data-heading="ScanNet++" dir="auto" class="heading" id="ScanNet++_0">
+                <span class="heading-collapse-indicator collapse-indicator collapse-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg>
+                </span>
+                ScanNet++
+              </h3>
+            </div>
+            <div class="el-pre">
+              <div class="block-language-col">
+                <div class="columnParent">
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/GT-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
+                          Choose a result from 
+                          <select id="full_label-selector3" class="partial_label-selector" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+                            <option value="planarrecon" selected>PlanarRecon</option>
+                            <option value="neuris">NeuRIS</option>
+                            <option value="airplane">AirPlanes</option>
+                          </select>
+                        </p>
+                      </div>
+                      <div class="full_label3 planarrecon">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/PlanarRecon-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                      <div class="full_label3 neuris", style="display: none;">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/NeuRIS-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                      <div class="full_label3 airplane", style="display: none;">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/AirPlanes-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/Ours-31a2c91c43.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-pre">
+              <div class="block-language-col">
+                <div class="columnParent">
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Reference</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/GT-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: -1px;">
+                          Choose a result from 
+                          <select id="full_label-selector4" class="partial_label-selector4" style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+                            <option value="planarrecon" selected>PlanarRecon</option>
+                            <option value="neuris">NeuRIS</option>
+                            <option value="airplane">AirPlanes</option>
+                          </select>
+                        </p>
+                      </div>
+                      <div class="full_label4 planarrecon">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/PlanarRecon-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                      <div class="full_label4 neuris", style="display: none;">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/NeuRIS-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                      <div class="full_label4 airplane", style="display: none;">
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/AirPlanes-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columnChild" style="flex-grow: 1; flex-basis: 100px; width: 100px;">
+                    <div class="block-language-col-md" style="margin-top: 0px; margin-bottom: 0px;">
+                      <div style="flex-grow: 1; flex-basis: 100px; text-align: center; margin-top: 0px; margin-bottom: 0px;">
+                        <p dir="auto" style="margin-top: 0px; margin-bottom: 0px;"><strong style="margin-top: 0px; margin-bottom: 0px;">Ours</strong></p>
+                      </div>
+                      <div>
+                        <model-viewer style="height: 360px; width: 330px;" orientation="0deg 0deg 135deg" camera-controls alt="scene" src="neuralplane/assets/scannet++/Ours-7bc286c1b6.glb" exposure="1.5" shadow-intensity="1" generate-schema>
+                          <effect-composer render-mode="quality" msaa="8">
+                            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+                          </effect-composer>
+                        </model-viewer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-hr">
+              <hr>
+            </div>
+            <div class="el-center">
+              <center>
+                <h2 dir="auto" class="heading" id="BibTex_0">BibTex Citation</h2>
+              </center>
+            </div>
+            <div class="el-pre">
+              <pre class="language-bib" tabindex="0"><code data-line="0" class="language-bib is-loaded">@inproceedings{
+    ye2025neuralplane,
+    title={NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields},
+    author={Hanqiao Ye and Yuzhou Liu and Yangdong Liu and Shuhan Shen},
+    booktitle={The Thirteenth International Conference on Learning Representations},
+    shorttitle={neuralplane},
+    year={2025},
+    url={https://openreview.net/forum?id=5UKrnKuspb}
+  }
+  </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+            </div>
+            <div class="footer">
+              <div class="data-bar"></div>
+            </div>
+          </div>
+        </div>
       </div>
-   </body>
+      <div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);">
+        <div id="right-sidebar" class="sidebar">
+          <div class="sidebar-handle"></div>
+          <div class="sidebar-topbar">
+            <div class="topbar-content">
+              <div id="search-container">
+                <div id="search-wrapper">
+                  <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search...">
+                  <div aria-label="Clear search" id="search-clear-button"></div>
+                </div>
+              </div>
+              <label class="theme-toggle-container" for="theme-toggle-input" id="">
+                <input class="theme-toggle-input" type="checkbox" id="theme-toggle-input">
+                <div class="toggle-background"></div>
+              </label>
+            </div>
+            <div class="clickable-icon sidebar-collapse-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                <path d="M10 4V20"></path>
+                <path d="M4 7H7"></path>
+                <path d="M4 10H7"></path>
+                <path d="M4 13H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="sidebar-content-wrapper">
+            <div id="right-sidebar-content" class="leaf-content">
+              <div id="outline" class=" tree-container">
+                <div class="feature-header">
+                  <div class="feature-title">Table Of Contents</div>
+                  <button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                  </button>
+                </div>
+                <div class="tree-item" data-depth="1">
+                  <a class="tree-item-self is-clickable" href="home.html#NeuralPlane_0" data-path="#NeuralPlane_0">
+                    <div class="tree-item-inner heading-link" heading-name="NeuralPlane">NeuralPlane</div>
+                  </a>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-collapsible" data-depth="1">
+                  <a class="tree-item-self is-clickable mod-collapsible" href="home.html#Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0" data-path="#Structured_3D_Reconstruction_in_Planar_Primitives_with_Neural_Fields_0">
+                    <div class="tree-item-icon collapse-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    <div class="tree-item-inner heading-link" heading-name="Structured 3D Reconstruction in Planar Primitives with Neural Fields">Structured 3D Reconstruction in Planar Primitives with Neural Fields</div>
+                  </a>
+                  <div class="tree-item-children">
+                    <div class="tree-item" data-depth="2">
+                      <a class="tree-item-self is-clickable" href="home.html#Abstract_0" data-path="#Abstract_0">
+                        <div class="tree-item-inner heading-link" heading-name="Abstract">Abstract</div>
+                      </a>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-collapsible" data-depth="2">
+                      <a class="tree-item-self is-clickable mod-collapsible" href="home.html#Results_Gallery_0" data-path="#Results_Gallery_0">
+                        <div class="tree-item-icon collapse-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg>
+                        </div>
+                        <div class="tree-item-inner heading-link" heading-name="Results Gallery">Results Gallery</div>
+                      </a>
+                      <div class="tree-item-children">
+                        <div class="tree-item" data-depth="4">
+                          <a class="tree-item-self is-clickable" href="home.html#ScanNetv2_0" data-path="#ScanNetv2_0">
+                            <div class="tree-item-inner heading-link" heading-name="ScanNetv2">ScanNetv2</div>
+                          </a>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item" data-depth="4">
+                          <a class="tree-item-self is-clickable" href="home.html#ScanNet++_0" data-path="#ScanNet++_0">
+                            <div class="tree-item-inner heading-link" heading-name="ScanNet++">ScanNet++</div>
+                          </a>
+                          <div class="tree-item-children"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tree-item" data-depth="2">
+                      <a class="tree-item-self is-clickable" href="home.html#BibTex_0" data-path="#BibTex_0">
+                        <div class="tree-item-inner heading-link" heading-name="BibTex">BibTex</div>
+                      </a>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
