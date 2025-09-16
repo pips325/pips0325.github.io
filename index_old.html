@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Structured 3D reconstruction in planar primitives with neural fields.">
+  <meta name="keywords" content="3D Reconstruction,3D Scene Understanding,Scene Abstraction,Neural Rendering">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./assets/favicon.svg">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 4px;
+    padding: 0;
+  }
+  
+  .grid-container > div {
+    text-align: center;
+    padding: 0;
+    font-size: 24px;
+  }
+  
+  .obj1 {
+    grid-column: 1; /* First object */
+  }
+  .obj2 {
+    grid-column: 2; /* Second object */
+  }
+  .obj3 {
+    grid-column: 3; /* Third object */
+  }
+
+  .content h4 {
+    font-size: 16px !important;
+    padding: 0;
+    margin: 0 !important;
+  }
+  
+  hr {
+    background-color: lightgray !important;
+  }
+</style>
+
+
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields</h1>
+          <div class="title is-4">
+            <span class="author-block">
+                Anonymous authors
+            </span>
+          </div>
+          <div class="title is-5">
+            <span class="author-block">
+              <a href="https://openreview.net/forum?id=5UKrnKuspb">
+                Submitted to ICLR 2025
+              </a>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=5UKrnKuspb"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Supplementary Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/attachment?id=5UKrnKuspb&name=supplementary_material"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-paperclip"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://openreview.net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://openreview.net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://openreview.net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>  -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser"
+    style="transform: scale(0.8); transform-origin: top center; margin: 0 auto; display: flex; justify-content: center;">
+    <div class="container is-max-desktop" style="width: 100%;">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <video class="video" id="xyalias6" loop playsinline autoplay muted src="assets/sliding-bar/input.mp4"
+              style="width: 80%; height: auto;" onplay="resizeAndPlay(this)"></video>
+            <canvas height="0" class="videoMerge" id="xyalias6Merge"></canvas>
+
+            <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+              <b>NeuralPlane</b> rebuilds indoor scenes as arrangements of planar primitives.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <img src="./assets/teaser.png" alt="TEASER"/>
+
+        <div class="content has-text-justified" style="margin-top: 20px">
+          <p>
+            3D maps assembled from planar primitives are compact and expressive in representing man-made environments, making them suitable for a spectrum of applications. In this paper, we present <strong>NeuralPlane</strong>, a novel approach that explores <strong>neural</strong> fields for multi-view 3D <strong>plane</strong> reconstruction. Our method is centered upon the core idea of distilling geometric and semantic cues from inconsistent 2D plane observations into a unified 3D neural representation, which unlocks the full leverage of plane attributes. NeuralPlane realizes this idea via several key designs, including: 1) a monocular module that generates geometrically smooth and semantically meaningful segments as 2D plane observations, 2) a plane-guided training procedure that implicitly learns accurate plane locations from multi-view plane observations, and 3) a self-supervised feature field termed Neural Coplanarity Field that enables the modeling of scene semantics alongside the geometry. Without relying on plane annotations, our method achieves high-fidelity reconstruction comprising planar primitives that are not only crisp but also well-aligned with the semantic content. Comprehensive experiments on ScanNetv2 and ScanNet++ demonstrate the superiority of our results in both geometry and semantics.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section" id="Result">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script>
+    $(function() {
+        $('#full_label-selector').change(function(){
+            $('.full_label').hide();
+            $('.full_label.' + $(this).val()).show();
+            console.log($(this).val())
+        });
+
+        $('#full_label-selector2').change(function(){
+            $('.full_label2').hide();
+            $('.full_label2.' + $(this).val()).show();
+            console.log($(this).val())
+        });
+
+        $('#full_label-selector3').change(function(){
+            $('.full_label3').hide();
+            $('.full_label3.' + $(this).val()).show();
+            console.log($(this).val())
+        });
+
+        $('#full_label-selector4').change(function(){
+            $('.full_label4').hide();
+            $('.full_label4.' + $(this).val()).show();
+            console.log($(this).val())
+        });
+
+        $('.partial_label-selector-3D').change(function(){
+            var dataset = $('#partial_label-selector1_3D').val();
+            var label = $('#partial_label-selector2_3D').val();
+
+            $('.partial_label_3D').hide();
+            $('.partial_label_3D.' + dataset + '.' + label).show();
+            console.log('.partial_label_3D.' + dataset + '.' + label)
+        });
+
+        $('#live-selector').change(function(){
+            $('.live').hide();
+            $('.live.' + $(this).val()).show();
+        });
+
+        $('#obj3D-selector').change(function(){
+            $('.obj3D').hide();
+            $('.obj3D.' + $(this).val()).show();
+        });
+    });
+  </script>
+
+  
+  <div class="container is-max-desktop">
+    <div  class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results Gallery</h2>
+      </div>
+    </div>
+
+    <br>
+
+    <h3 class="title is-4">ScanNetv2 Dataset</h3>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">
+            Reference plane model
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">Choose a result from
+            <select
+              id="full_label-selector" class="partial_label-selector"
+              style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+              <option value="planarrecon" selected>PlanarRecon</option>
+              <option value="objectsdfpp">ObjectSDF++</option>
+              <option value="airplane">AirPlanes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">NeuralPlane (Ours)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="obj1">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/GT-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+      </div>
+      <div class="obj2">
+        <div class="full_label planarrecon">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/PlanarRecon-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label objectsdfpp", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/ObjectSDF++-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label airplane", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/AirPlanes-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+      </div>
+      <div class="obj3">
+        <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/Ours-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">
+            Reference plane model
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">Choose a result from
+            <select
+              id="full_label-selector2" class="partial_label-selector"
+              style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+              <option value="planarrecon" selected>PlanarRecon</option>
+              <option value="objectsdfpp">ObjectSDF++</option>
+              <option value="airplane">AirPlanes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">NeuralPlane (Ours)</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid-container">
+      <div class="obj1">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/GT-scene0427_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+      </div>
+      <div class="obj2">
+        <div class="full_label2 planarrecon">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/PlanarRecon-scene0427_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label2 objectsdfpp", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/ObjectSDF++-scene0427_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label2 airplane", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/AirPlanes-scene0427_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+      </div>
+      <div class="obj3">
+        <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannetv2/Ours-scene0427_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+    </div>
+
+
+    <h3 class="title is-4">ScanNet++ Dataset</h3>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">
+            Reference plane model
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">Choose a result from
+            <select
+              id="full_label-selector3" class="partial_label-selector"
+              style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+              <option value="planarrecon" selected>PlanarRecon</option>
+              <option value="neuris">NeuRIS</option>
+              <option value="airplane">AirPlanes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">NeuralPlane (Ours)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="obj1">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 45deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannet++/GT-31a2c91c43.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+      </div>
+      <div class="obj2">
+        <div class="full_label3 planarrecon">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 45deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannet++/PlanarRecon-31a2c91c43.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label3 neuris", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 45deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannet++/NeuRIS-31a2c91c43.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+        <div class="full_label3 airplane", style="display: none;">
+          <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 45deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannet++/AirPlanes-31a2c91c43.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+          </model-viewer>
+        </div>
+      </div>
+      <div class="obj3">
+        <model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 45deg"
+                  camera-controls
+                  alt="scene"
+                  src="./assets/scannet++/Ours-31a2c91c43.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">
+            Reference plane model
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">Choose a result from
+            <select
+              id="full_label-selector4" class="partial_label-selector"
+              style="padding: 2px; background:#f0f0f0; border:none; font-size:16px;">
+              <option value="planarrecon" selected>PlanarRecon</option>
+              <option value="neuris">NeuRIS</option>
+              <option value="airplane">AirPlanes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content" center>
+          <div class="title is-6 has-text-centered">NeuralPlane (Ours)</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="obj1">
+        <model-viewer style="height: 360px; width: 330px;"
+                orientation="0deg 0deg 45deg"
+                camera-controls
+                alt="scene"
+                src="./assets/scannet++/GT-7bc286c1b6.glb"
+                exposure="1.5"
+                shadow-intensity="1"
+                generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+    </div>
+    <div class="obj2">
+      <div class="full_label4 planarrecon">
+        <model-viewer style="height: 360px; width: 330px;"
+                orientation="0deg 0deg 45deg"
+                camera-controls
+                alt="scene"
+                src="./assets/scannet++/PlanarRecon-7bc286c1b6.glb"
+                exposure="1.5"
+                shadow-intensity="1"
+                generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+      <div class="full_label4 neuris", style="display: none;">
+        <model-viewer style="height: 360px; width: 330px;"
+                orientation="0deg 0deg 45deg"
+                camera-controls
+                alt="scene"
+                src="./assets/scannet++/NeuRIS-7bc286c1b6.glb"
+                exposure="1.5"
+                shadow-intensity="1"
+                generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+      <div class="full_label4 airplane", style="display: none;">
+        <model-viewer style="height: 360px; width: 330px;"
+                orientation="0deg 0deg 45deg"
+                camera-controls
+                alt="scene"
+                src="./assets/scannet++/AirPlanes-7bc286c1b6.glb"
+                exposure="1.5"
+                shadow-intensity="1"
+                generate-schema>
+          <effect-composer render-mode="quality" msaa="8">
+            <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+          </effect-composer>
+        </model-viewer>
+      </div>
+    </div>
+    <div class="obj3">
+      <model-viewer style="height: 360px; width: 330px;"
+                orientation="0deg 0deg 45deg"
+                camera-controls
+                alt="scene"
+                src="./assets/scannet++/Ours-7bc286c1b6.glb"
+                exposure="1.5"
+                shadow-intensity="1"
+                generate-schema>
+        <effect-composer render-mode="quality" msaa="8">
+          <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+        </effect-composer>
+      </model-viewer>
+    </div>
+    </div>
+
+  </div>
+<br>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @inproceedings{anonymousNeuralPlane2024,
+        title = {NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields},
+        booktitle = {Submitted to the Thirteenth International Conference on Learning Representations},
+        author = {{Anonymous}},
+        year = {2024},
+        annotation = {[OpenReview-2024]}
+      }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://neuralplane.github.io/">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://neuralplane.github.io/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
