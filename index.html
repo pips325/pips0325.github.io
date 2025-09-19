@@ -461,27 +461,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="el-center">
-              <center>
-                <script src="neuralplane/static/js/video_comparison.js"></script>
-                <video
-                  style="width: auto; height: 200px; margin-bottom: -27px; margin-top: 25px;"
-                  src="neuralplane/assets/teaser-video.mp4"
-                  muted=""
-                  autoplay=""
-                  playsinline=""
-                  loop=""
-                  id="xyalias6"
-                  class="video"
-                  onplay="resizeAndPlay(this)"
-                ></video>
-                <canvas id="xyalias6Merge" class="videoMerge" height="0"></canvas>
-
-                <p dir="auto" style="width: 600px; white-space: normal; word-wrap: break-word; margin: 0 auto; text-align: center;">
-                  <b>PIPS</b> reconstructs planar instance meshes, achieving alignment between geometry and semantics through planar structural priors.
-                </p>
-              </center>
-            </div> -->
             <div class="el-center">
               <center>
                 <!-- 左侧普通 RGB 视频 -->
@@ -634,6 +613,7 @@
                           <option value="planarrecon" selected>PlanarRecon</option>
                           <option value="objectsdfpp">ObjectSDF++</option>
                           <option value="airplane">AirPlanes</option>
+                          <option value="neuralplane">NeuralPlane</option>
                         </select>
                       </div>
                       <div>
@@ -672,6 +652,20 @@
                             camera-controls
                             alt="scene"
                             src="neuralplane/assets/scannetv2/airplanes-scene0084_00.glb"
+                            exposure="1.5"
+                            shadow-intensity="1"
+                            generate-schema
+                          >
+                            <effect-composer render-mode="quality" msaa="8"><color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect></effect-composer>
+                          </model-viewer>
+                        </div>
+                        <div class="full_label neuralplane" , style="display: none;">
+                          <model-viewer
+                            style="height: 360px; width: 330px;"
+                            orientation="0deg 0deg 135deg"
+                            camera-controls
+                            alt="scene"
+                            src="pips/assets/scannetv2/neuralplane_scene0131.glb"
                             exposure="1.5"
                             shadow-intensity="1"
                             generate-schema

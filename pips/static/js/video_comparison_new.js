@@ -6,7 +6,7 @@ Number.prototype.clamp = function(min, max) {
 };
 
 // =======================
-// 左侧 RGB 视频文字叠加（保持原样）
+// 左侧 RGB 视频文字叠加
 // =======================
 function drawRGBLabel() {
     const video = document.getElementById("rgbVideo");
@@ -21,15 +21,15 @@ function drawRGBLabel() {
     function loop() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        const fontSize = Math.max(12, canvas.height * 0.08);
+        const fontSize = Math.max(12, canvas.height * 0.1);
         ctx.font = `bold ${fontSize}px sans-serif`;
-        ctx.fillStyle = "#FF0000";
+        ctx.fillStyle = "#FFFFFF";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.shadowColor = "rgba(0,0,0,1)";
         ctx.shadowBlur = fontSize * 0.8;
 
-        ctx.fillText("RGB", canvas.width * 0.1, canvas.height * 0.1);
+        ctx.fillText("RGB\nReference", canvas.width * 0.5, canvas.height * 0.5);
 
         ctx.shadowBlur = 0;
         requestAnimationFrame(loop);
@@ -48,39 +48,14 @@ function drawRGBLabel() {
 }
 
 // =======================
-// 四象限文字自适应换行函数
+// 四象限视频绘制函数（同步播放）
 // =======================
-function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight) {
-    const words = text.split(' ');
-    let line = '';
-    const lines = [];
-
-    for (let n = 0; n < words.length; n++) {
-        const testLine = line + (line ? ' ' : '') + words[n];
-        const metrics = ctx.measureText(testLine);
-        if (metrics.width > maxWidth && line) {
-            lines.push(line);
-            line = words[n];
-        } else {
-            line = testLine;
-        }
-    }
-    lines.push(line);
-
-    lines.forEach((l, i) => {
-        ctx.fillText(l, x, y + i * lineHeight);
-    });
-}
-
-// =======================
-// 四象限视频绘制函数
-// =======================
-function playVids(vidA, vidB, vidC, vidD, canvas) {
+function playVidsSync(masterVideo, vidA, vidB, vidC, vidD, canvas) {
     const ctx = canvas.getContext("2d");
     let posX = 0.5;
     let posY = 0.5;
 
-    const labels = ["Airplanes", "NeuralPlane", "PlanarSplatting", "PIPS"]; // 左上, 右上, 左下, 右下
+    const labels = ["Airplanes", "NeuralPlane", "PlanarSplatting", "PIPS"];
 
     function trackMouse(e) {
         const bcr = canvas.getBoundingClientRect();
@@ -107,6 +82,13 @@ function playVids(vidA, vidB, vidC, vidD, canvas) {
         const splitY = h * posY;
         const circleRadius = Math.max(8, h * 0.12);
 
+        // 同步时间到 masterVideo
+        [vidA, vidB, vidC, vidD].forEach(v => {
+            if (Math.abs(v.currentTime - masterVideo.currentTime) > 0.03) {
+                v.currentTime = masterVideo.currentTime;
+            }
+        });
+
         // 绘制四象限视频
         [[0,0,splitX,splitY,vidA],[splitX,0,w-splitX,splitY,vidB],
          [0,splitY,splitX,h-splitY,vidC],[splitX,splitY,w-splitX,h-splitY,vidD]]
@@ -115,7 +97,7 @@ function playVids(vidA, vidB, vidC, vidD, canvas) {
             ctx.beginPath();
             ctx.rect(x,y,wid,hei);
             ctx.clip();
-            ctx.drawImage(vid,0,0);
+            ctx.drawImage(vid,0,0,vid.videoWidth,vid.videoHeight,x,y,wid,hei);
             ctx.restore();
         });
 
@@ -133,7 +115,7 @@ function playVids(vidA, vidB, vidC, vidD, canvas) {
         ctx.fillStyle = "rgba(255,215,147,0.25)";
         ctx.fill();
 
-        // 箭头绘制
+        // 箭头
         function drawArrow(x1,y1,x2,y2){
             const angle=Math.atan2(y2-y1,x2-x1);
             const headLength=Math.max(5,h*0.04);
@@ -159,24 +141,31 @@ function playVids(vidA, vidB, vidC, vidD, canvas) {
         drawArrow(splitX,splitY-circleRadius*0.8,splitX,splitY-circleRadius);
         drawArrow(splitX,splitY+circleRadius*0.8,splitX,splitY+circleRadius);
 
-        // 四象限文字（自适应换行）
-        const fontSize=Math.max(12,h*0.08);
+        // 四象限文字
+        const fontSize=Math.max(14,h*0.1);
         ctx.font=`bold ${fontSize}px sans-serif`;
         ctx.textAlign="center";
-        ctx.textBaseline="top";
+        ctx.textBaseline="middle";
         const glowColor="rgba(0,0,0,1)";
 
-        [[labels[0],splitX*0.5,splitY*0.5,"#FFFFFF",splitX*0.5],
-         [labels[1],splitX+(w-splitX)*0.5,splitY*0.5,"#FFFFFF",(w-splitX)*0.5],
-         [labels[2],splitX*0.5,splitY+ (h-splitY)*0.5,"#FFFFFF",splitX*0.5],
-         [labels[3],splitX+(w-splitX)*0.5,splitY+(h-splitY)*0.5,"#FF0000",(w-splitX)*0.5]]
-        .forEach(([text,x,y,color,maxWidth])=>{
+        [[labels[0],0,0,splitX,splitY,"#FFFFFF"],
+        [labels[1],splitX,0,w-splitX,splitY,"#FFFFFF"],
+        [labels[2],0,splitY,splitX,h-splitY,"#FFFFFF"],
+        [labels[3],splitX,splitY,w-splitX,h-splitY,"#FF0000"]]
+        .forEach(([text, x0, y0, wid, hei, color])=>{
             ctx.save();
+            ctx.beginPath();
+            ctx.rect(x0, y0, wid, hei);
+            ctx.clip();
+
             ctx.fillStyle=color;
             ctx.shadowColor=glowColor;
             ctx.shadowBlur=fontSize*0.8;
-            const lineHeight = fontSize * 1.2;
-            drawWrappedText(ctx,text,x,y,maxWidth,lineHeight);
+
+            const drawX = x0 + wid/2;
+            const drawY = y0 + hei/2;
+
+            ctx.fillText(text, drawX, drawY);
             ctx.restore();
         });
 
@@ -196,16 +185,19 @@ function resizeAndPlay(el) {
     const vidB = document.getElementById("xyaliasB");
     const vidC = document.getElementById("xyaliasC");
     const vidD = document.getElementById("xyaliasD");
+    const masterVideo = document.getElementById("rgbVideo"); // RGB作为主同步
 
-    vidA.style.height = vidB.style.height = vidC.style.height = vidD.style.height = '0';
+    [vidA, vidB, vidC, vidD].forEach(v=>v.style.height='0');
 
     function startAll() {
         canvas.width = vidA.videoWidth;
         canvas.height = vidA.videoHeight;
-        vidA.play(); vidB.play(); vidC.play(); vidD.play();
-        playVids(vidA, vidB, vidC, vidD, canvas);
 
-        drawRGBLabel(); // 左侧 RGB 文字
+        [masterVideo, vidA, vidB, vidC, vidD].forEach(v=>v.play());
+
+        playVidsSync(masterVideo, vidA, vidB, vidC, vidD, canvas);
+
+        drawRGBLabel();
     }
 
     if (vidA.videoWidth && vidA.videoHeight) {
