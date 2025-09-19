@@ -141,16 +141,26 @@ function playVids(vidA, vidB, vidC, vidD, canvas) {
         ctx.textBaseline="middle";
         const glowColor="rgba(0,0,0,1)";
 
-        [[labels[0],splitX*0.5,splitY*0.5,"#FFFFFF"],
-         [labels[1],splitX+(w-splitX)*0.5,splitY*0.5,"#FFFFFF"],
-         [labels[2],splitX*0.5,splitY+(h-splitY)*0.5,"#FFFFFF"],
-         [labels[3],splitX+(w-splitX)*0.5,splitY+(h-splitY)*0.5,"#FF0000"]]
-        .forEach(([text,x,y,color])=>{
+        [[labels[0],0,0,splitX,splitY,"#FFFFFF"],
+        [labels[1],splitX,0,w-splitX,splitY,"#FFFFFF"],
+        [labels[2],0,splitY,splitX,h-splitY,"#FFFFFF"],
+        [labels[3],splitX,splitY,w-splitX,h-splitY,"#FF0000"]]
+        .forEach(([text, x0, y0, wid, hei, color])=>{
             ctx.save();
+            ctx.beginPath();
+            ctx.rect(x0, y0, wid, hei); // 裁剪到象限范围
+            ctx.clip();
+
             ctx.fillStyle=color;
             ctx.shadowColor=glowColor;
             ctx.shadowBlur=fontSize*0.8;
-            ctx.fillText(text,x,y);
+            ctx.textAlign="center";
+            ctx.textBaseline="middle";
+
+            const drawX = x0 + wid/2;
+            const drawY = y0 + hei/2;
+
+            ctx.fillText(text, drawX, drawY);
             ctx.restore();
         });
 
