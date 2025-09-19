@@ -1,0 +1,87 @@
+<div style="display:flex; align-items:flex-start; gap:20px;">
+  <!-- 左侧普通 RGB 视频 -->
+  <div style="position:relative;">
+    <video
+      src="./pips/assets/render_rgb_h264.mp4"
+      muted autoplay playsinline loop
+      id="rgbVideo"
+      style="width:400px; height:auto;">
+    </video>
+    <!-- 文字叠加 Canvas -->
+    <canvas id="rgbCanvas" style="position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none;"></canvas>
+  </div>
+
+  <!-- 右侧四象限对比视频 -->
+  <div style="position:relative;">
+    <video
+      src="./pips/assets/render_air_h264.mp4"
+      muted autoplay playsinline loop
+      id="xyaliasA" class="video"
+      onplay="resizeAndPlay(this)">
+    </video>
+    <video
+      src="./pips/assets/render_np_h264.mp4"
+      muted autoplay playsinline loop
+      id="xyaliasB" class="video"
+      onplay="resizeAndPlay(this)">
+    </video>
+    <video
+      src="./pips/assets/render_ps_h264.mp4"
+      muted autoplay playsinline loop
+      id="xyaliasC" class="video"
+      onplay="resizeAndPlay(this)">
+    </video>
+    <video
+      src="./pips/assets/render_pips_h264.mp4"
+      muted autoplay playsinline loop
+      id="xyaliasD" class="video"
+      onplay="resizeAndPlay(this)">
+    </video>
+    <canvas id="xyaliasMerge" class="videoMerge" style="width:400px; height:auto;"></canvas>
+  </div>
+</div>
+
+<script src="./pips/static/js/video_comparison_quad.js"></script>
+
+<script>
+// 给左侧 RGB 视频加文字
+function drawRGBLabel() {
+    const video = document.getElementById("rgbVideo");
+    const canvas = document.getElementById("rgbCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+    }
+
+    function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // 设置文字样式
+        const fontSize = Math.max(12, canvas.height * 0.08);
+        ctx.font = `bold ${fontSize}px sans-serif`;
+        ctx.fillStyle = "#FFFFFF"; // 文字颜色
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.shadowColor = "rgba(0,0,0,1)";
+        ctx.shadowBlur = fontSize * 0.8;
+        // 绘制文字在视频中心
+        ctx.fillText("RGB", canvas.width/2, canvas.height/2);
+
+        requestAnimationFrame(loop);
+    }
+
+    if (video.videoWidth && video.videoHeight) {
+        resizeCanvas();
+        loop();
+        return;
+    }
+
+    video.addEventListener('loadedmetadata', () => {
+        resizeCanvas();
+        loop();
+    }, {once:true});
+}
+
+drawRGBLabel();
+</script>

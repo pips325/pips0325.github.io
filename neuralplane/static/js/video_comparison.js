@@ -106,13 +106,34 @@ Number.prototype.clamp = function(min, max) {
 };
     
     
-function resizeAndPlay(element)
-{
-  var cv = document.getElementById(element.id + "Merge");
-  cv.width = element.videoWidth/2;
-  cv.height = element.videoHeight/2;
-  element.play();
-  element.style.height = "0px";  // Hide video without stopping it
+// function resizeAndPlay(element)
+// {
+//   var cv = document.getElementById(element.id + "Merge");
+//   cv.width = element.videoWidth/2;
+//   cv.height = element.videoHeight/2;
+//   element.play();
+//   element.style.height = "0px";  // Hide video without stopping it
     
-  playVids(element.id);
+//   playVids(element.id);
+// }
+function resizeAndPlay(el)
+{
+    var cv = document.getElementById(el.id + 'Merge');
+
+    // 如果已经拿到尺寸，直接继续
+    if(el.videoWidth && el.videoHeight){
+        setCanvasAndGo();
+        return;
+    }
+
+    // 否则等元数据
+    el.addEventListener('loadedmetadata', setCanvasAndGo, {once:true});
+
+    function setCanvasAndGo(){
+        cv.width  = el.videoWidth  / 2;
+        cv.height = el.videoHeight / 2;
+        el.play();
+        el.style.height = '0';   // 隐藏原视频
+        playVids(el.id);
+    }
 }

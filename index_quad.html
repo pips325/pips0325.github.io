@@ -1,0 +1,31 @@
+<script src="./pips/static/js/video_comparison_quad.js"></script>
+
+<video
+  src="./pips/assets/render_air_h264.mp4"
+  muted autoplay playsinline loop
+  id="xyaliasA" class="video"
+  onplay="resizeAndPlay(this)">
+</video>
+
+<video
+  src="./pips/assets/render_np_h264.mp4"
+  muted autoplay playsinline loop
+  id="xyaliasB" class="video"
+  onplay="resizeAndPlay(this)">
+</video>
+
+<video
+  src="./pips/assets/render_ps_h264.mp4"
+  muted autoplay playsinline loop
+  id="xyaliasC" class="video"
+  onplay="resizeAndPlay(this)">
+</video>
+
+<video
+  src="./pips/assets/render_pips_h264.mp4"
+  muted autoplay playsinline loop
+  id="xyaliasD" class="video"
+  onplay="resizeAndPlay(this)">
+</video>
+
+<canvas id="xyaliasMerge" class="videoMerge" style="width:400px; height:auto;"></canvas>
